@@ -28,7 +28,24 @@ Desde PowerShell, en la carpeta `Terranova`, inicia el servidor:
 py -3 -m backend.main
 ```
 
+Este comando inicia el servidor y la interfaz completa; no hace falta instalar paquetes. Si `py` no funciona, prueba:
+
+```powershell
+python -m backend.main
+```
+
 Abre <http://127.0.0.1:8000>. Mantén abierta la ventana de PowerShell mientras usas la aplicación; `Ctrl+C` detiene el servidor. También puedes iniciar el programa con doble clic en [`iniciar_terranova.bat`](../iniciar_terranova.bat).
+
+Si el puerto 8000 está ocupado o la página no abre, inicia el servidor en otro puerto desde PowerShell:
+
+```powershell
+$env:TERRANOVA_PORT = "8011"
+py -3 -m backend.main
+```
+
+En ese caso abre <http://127.0.0.1:8011>. La variable solo se aplica a esa ventana de PowerShell.
+
+Si la página aparece sin estilos, confirma que estás usando el mismo puerto del servidor y prueba una recarga forzada con `Ctrl+F5`. Para comprobar que el archivo de estilos carga, abre `http://127.0.0.1:8011/styles.css` (o cambia `8011` por el puerto que estés usando); debe mostrarse el contenido CSS.
 
 El primer arranque crea `.env`, la carpeta `data`, la base de datos y los datos de demostración. Para cambiar el puerto o el correo y la contraseña inicial, edita `.env` antes del primer arranque.
 

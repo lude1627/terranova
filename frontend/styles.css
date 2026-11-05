@@ -47,7 +47,7 @@ button { cursor: pointer; }
 .user-details strong, .user-details small { display: block; }
 .user-details strong { font-size: 12px; }
 .user-details small { color: var(--muted); font-size: 10px; }
-.chevron { color: var(--muted); font-size: 15px; }
+.logout-icon { width: 18px; height: 18px; flex: 0 0 auto; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .page-content { max-width: 1540px; margin: 0 auto; padding: 31px 38px 55px; }
 .page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 15px; margin-bottom: 22px; }
 .page-head h2 { font-size: 23px; letter-spacing: -.55px; margin: 0; }
@@ -189,7 +189,7 @@ td strong { font-size: 11px; }
   .top-heading { flex: 1; min-width: 0; }
   .top-heading h1 { font-size: 17px; }
   .top-actions { gap: 8px; }
-  .server-pill, .user-details, .chevron { display: none; }
+  .server-pill, .user-details { display: none; }
   .avatar { width: 34px; height: 34px; }
   .page-content { padding: 22px 14px 38px; }
   .page-head { align-items: flex-start; flex-direction: column; }
