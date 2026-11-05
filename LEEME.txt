@@ -1,0 +1,18 @@
+TERRANOVA - APLICACIÓN LOCAL
+
+Este proyecto utiliza una interfaz web, un servidor incluido en Python y una base de datos SQLite.
+
+La documentación se encuentra en la carpeta docs:
+- README.md: descripción, funciones y acceso inicial.
+- REQUISITOS.md: requisitos e instalación.
+- CODE.md: arquitectura y API.
+- DATABASE.md: esquema y relaciones de la base de datos.
+
+No requiere instalar paquetes adicionales de Python.
+
+La carpeta frontend contiene la interfaz. No abras un index.html directamente:
+inicia primero el servidor local con `py -3 -m backend.main` o ejecuta
+`iniciar_terranova.bat` para que funcione el inicio de sesión y la API.
+
+La contraseña inicial es Cambiar123!! para admin@terranova.local. Cámbiala
+desde Configuración después de iniciar sesión.

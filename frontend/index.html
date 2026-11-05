@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153a32">
+  <title>Terranova | Gestión inmobiliaria</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div id="loginScreen" class="login-screen hidden">
+    <section class="login-card">
+      <a class="brand login-brand" href="/" aria-label="Terranova inicio">
+        <span class="brand-mark">T</span>
+        <span><strong>terranova</strong><small>GESTIÓN INMOBILIARIA</small></span>
+      </a>
+      <p class="eyebrow">PORTAL DE TRABAJO</p>
+      <h1>Bienvenido de nuevo</h1>
+      <p class="muted">Ingresa con tu cuenta para continuar.</p>
+      <form id="loginForm" class="form-stack">
+        <label class="field">Correo electrónico
+          <input name="email" type="email" autocomplete="username" required>
+        </label>
+        <label class="field">Contraseña
+          <input name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="button button-primary button-wide" type="submit">Iniciar sesión</button>
+      </form>
+      <p id="loginError" class="form-error" role="alert"></p>
+      <p class="login-foot">Aplicación local · Acceso protegido</p>
+    </section>
+  </div>
+
+  <div id="application" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <a class="brand" href="#" data-page="dashboard">
+        <span class="brand-mark">T</span>
+        <span class="brand-copy"><strong>terranova</strong><small>GESTIÓN INMOBILIARIA</small></span>
+      </a>
+      <div class="nav-section">
+        <p class="nav-caption">MENÚ PRINCIPAL</p>
+        <nav class="nav-list" aria-label="Menú principal">
+          <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span>Resumen</button>
+          <button class="nav-item" data-page="plots"><span class="nav-icon">▦</span>Terrenos y lotes</button>
+          <button class="nav-item" data-page="clients"><span class="nav-icon">♙</span>Clientes</button>
+          <button class="nav-item" data-page="sales"><span class="nav-icon">↗</span>Ventas y contratos</button>
+          <button class="nav-item" data-page="payments"><span class="nav-icon">◷</span>Cuotas y abonos</button>
+          <button class="nav-item" data-page="reports"><span class="nav-icon">▤</span>Informes</button>
+        </nav>
+      </div>
+      <div class="nav-section admin-section">
+        <p class="nav-caption">ADMINISTRACIÓN</p>
+        <nav class="nav-list" aria-label="Administración">
+          <button class="nav-item admin-only" data-page="users"><span class="nav-icon">♧</span>Usuarios y roles</button>
+          <button class="nav-item admin-only" data-page="settings"><span class="nav-icon">⚙</span>Configuración</button>
+        </nav>
+      </div>
+      <div class="sidebar-foot">
+        <span class="status-pulse"></span>
+        <span>Servidor local activo<small>Datos en base de datos SQLite</small></span>
+      </div>
+    </aside>
+
+    <div id="sidebarScrim" class="sidebar-scrim"></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-button mobile-menu" aria-label="Abrir menú">☰</button>
+        <div class="top-heading">
+          <div class="breadcrumb">Terranova <span>/</span> <span id="breadcrumb">Resumen</span></div>
+          <h1 id="pageTitle">Resumen</h1>
+        </div>
+        <div class="top-actions">
+          <div class="server-pill"><span class="status-pulse"></span> Conectado</div>
+          <button class="user-menu" id="userMenu" aria-label="Cerrar sesión">
+            <span class="avatar" id="userAvatar">T</span>
+            <span class="user-details"><strong id="userName">Usuario</strong><small id="userRole">Rol</small></span>
+            <span class="chevron">⌄</span>
+          </button>
+        </div>
+      </header>
+      <section id="pageContent" class="page-content" tabindex="-1"></section>
+    </main>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden" role="presentation">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-header">
+        <div><p class="eyebrow">TERRANOVA</p><h2 id="modalTitle">Nuevo registro</h2></div>
+        <button id="modalClose" class="icon-button" aria-label="Cerrar">×</button>
+      </header>
+      <form id="recordForm">
+        <div id="modalBody" class="modal-body"></div>
+        <footer class="modal-footer">
+          <button id="modalCancel" class="button button-quiet" type="button">Cancelar</button>
+          <button id="modalSubmit" class="button button-primary" type="submit">Guardar</button>
+        </footer>
+      </form>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
